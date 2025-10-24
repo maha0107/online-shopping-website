@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment - Meesho Style Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Proceed to Payment 💳</h1>
+  </header>
+
+  <section class="section payment">
+    <h2>Order Summary</h2>
+    <p id="amount"></p>
+
+    <h3>Payment Options</h3>
+    <form>
+      <label><input type="radio" name="payment" checked> UPI / Google Pay</label><br>
+      <label><input type="radio" name="payment"> Credit / Debit Card</label><br>
+      <label><input type="radio" name="payment"> Cash on Delivery</label><br><br>
+      <button type="button" onclick="confirmPayment()">Confirm Payment</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Meesho Style Store | Secure Checkout</p>
+  </footer>
+
+  <script>
+    const total = localStorage.getItem("cartTotal") || 0;
+    document.getElementById("amount").textContent = "Total Payable: ₹" + total;
+
+    function confirmPayment() {
+      alert("✅ Payment Successful! Thank you for shopping at Meesho Style Store.");
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
